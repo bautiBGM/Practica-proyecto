@@ -14,6 +14,7 @@
 // console.log('server ok in localhost:8080'))
 
 import express from "express"
+import router from "./routes/router.js"
 
 const app = express()
 
@@ -21,9 +22,8 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-app.get("/",(request,response)=>{
-    response.send("get all")
-})
+app.use(router)
+
 app.get("/:id",(request,response)=>{
     response.send("get by id")
 })
