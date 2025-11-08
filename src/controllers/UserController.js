@@ -1,25 +1,28 @@
+import UserService  from "../services/UserService"
 
-const users =[
-    {
-        id:1,
-        name:"bauti"
-    },
-    {
-        id:2,
-        name:"manu"
-    }
-]
-export const getAllUsers =(req,res)=>{
-    res.status(200).send(users)
-}
-
-
-export const getAllUserById =(req,res)=>{
-    const {id}= req.params
-    const user = users.find(u => u.id == id)
-    res.status(200).send(user)
-}
 
 class UserController {
-    
+
+userService = new UserService()
+
+getAllUsers =(req,res)=>{
+    try {
+            const user = this.userService.getAllUsers()
+
+            res.status(200).send({
+            success: true,
+            message: user
+        })
+
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            message: error.message
+        })
+    }
 }
+
+
+}
+
+export default UserController
