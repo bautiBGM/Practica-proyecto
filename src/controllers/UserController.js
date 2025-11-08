@@ -20,3 +20,6 @@ export const getAllUserById =(req,res)=>{
     res.status(200).send(user)
 }
 
+class UserController {
+    
+}
