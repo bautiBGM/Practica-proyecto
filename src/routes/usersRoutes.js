@@ -8,9 +8,7 @@ const usersRoutes = Router()
 usersRoutes.get("/", userController.getAllUsers)
 // usersRoutes.get("/:id", getAllUserById)
 
-// usersRoutes.post("/", (req,res)=>{
-//     res.status(200).send({status: true, message:""})
-// })
+usersRoutes.post("/", userController.createUser)
 
 // usersRoutes.put("/:id", (req,res)=>{
 //     res.status(200).send({status: true, message:""})

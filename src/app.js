@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-await connection.sync({force : true})
+await connection.sync({force : false})
 
 app.use("/app",router)
 
