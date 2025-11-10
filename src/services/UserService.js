@@ -1,3 +1,5 @@
+import User from "../models/User.js"
+
 class UserService{
 
     getAllUsers =(req,res)=>{
