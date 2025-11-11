@@ -14,9 +14,8 @@ usersRoutes.post("/", userController.createUser)
 //     res.status(200).send({status: true, message:""})
 // })
 
-// usersRoutes.delete("/:id", (req,res)=>{
-//     res.status(200).send({status: true, message:""})
-// })
+usersRoutes.delete("/:id", userController.deleteUser)
+
 
 
 

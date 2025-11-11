@@ -1,6 +1,6 @@
 import app from "../Practica-proyecto/src/app.js"
+import { SERVER_PORT } from "./config/config.js"
 
-
-app.listen(8080,()=>{
-    console.log('8080')
+app.listen(SERVER_PORT,()=>{
+    console.log("8080")
 })
