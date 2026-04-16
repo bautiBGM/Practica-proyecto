@@ -1,39 +1,28 @@
 import {DataTypes,Model} from "sequelize"
 import connection from "../db/connection.js"
 
-class Driver extends Model{}
+class Constructor extends Model{}
 
-Driver.init({
+Constructor.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
-    driverId: {
+    constructorId: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
-    givenName: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    familyName: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    code: {
-        type: DataTypes.STRING,
-        allowNull: true
     },
     nationality: {
         type: DataTypes.STRING,
         allowNull: true
     },
-    dateOfBirth: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },    price: {
+    price: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 10
@@ -45,7 +34,7 @@ Driver.init({
     }
 },{
     sequelize: connection,
-    modelName: "Driver"
+    modelName: "Constructor"
 })
 
-export default Driver
+export default Constructor
