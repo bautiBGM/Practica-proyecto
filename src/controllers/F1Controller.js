@@ -7,7 +7,7 @@ const f1Service = new F1Service()
 const driverService = new DriverService()
 
 class F1Controller {
-
+    // trae todos los pilotos de la base de datos
     getDriversFromDB = async (req, res) => {
         try {
             const drivers = await driversService.getAllDrivers()
@@ -17,6 +17,7 @@ class F1Controller {
             res.status(500).json({ error: 'Error al obtener pilotos' })
         }
     }
+    // trae los pilotos desde la api 
     getDrivers = async (req, res) => {
         try {
             const drivers = await f1Service.getDrivers()
@@ -26,7 +27,7 @@ class F1Controller {
             res.status(500).json({ error: 'Error al obtener pilotos' })
         }
     }
-    
+    // guarda los pilotos en la base de datos
     syncDrivers = async (req, res) => {
         try {
             const driversFromApi = await f1Service.getDrivers()
