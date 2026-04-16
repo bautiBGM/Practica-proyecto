@@ -4,7 +4,7 @@ import connection from "../db/connection.js"
 class Driver extends Model{}
 
 Driver.init({
-     id: {
+    id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
@@ -34,6 +34,9 @@ Driver.init({
         type: DataTypes.STRING,
         allowNull: true
     }
+},{
+    sequelize: connection,
+    modelName: "Driver"
 })
 
 export default Driver

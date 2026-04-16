@@ -4,6 +4,8 @@ import F1Controller from "../controllers/F1Controller.js"
 const f1Controller = new F1Controller()
 const f1Routes = Router()
 
-f1Routes.get("/drivers", f1Controller.getDrivers)
+f1Routes.get("/drivers-db", f1Controller.getDriversFromDB)
+f1Routes.post("/sync-drivers", f1Controller.syncDrivers)
+
 
 export default f1Routes
