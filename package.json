@@ -1,0 +1,31 @@
+{
+  "name": "p-mio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "proyecto de prueba para preacticar lo aprendido",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --env-file .env.dev --watch index.js",
+    "local": "node --env-file .env.local --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bautiBGM/Practica-proyecto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bautiBGM/Practica-proyecto/issues"
+  },
+  "homepage": "https://github.com/bautiBGM/Practica-proyecto#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.15.3",
+    "sequelize": "^6.37.7"
+  }
+}
