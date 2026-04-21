@@ -10,7 +10,7 @@ class F1Controller {
     // trae todos los pilotos de la base de datos
     getDriversFromDB = async (req, res) => {
         try {
-            const drivers = await driversService.getAllDrivers()
+            const drivers = await driverService.getAllDrivers()
             res.json(drivers)
         } catch (error) {
             console.error(error)
