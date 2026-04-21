@@ -1,6 +1,7 @@
 import Driver from "../models/Driver.js"
 
 class DriverService {
+
     syncDrivers = async (driversFromApi) => {
         let createdCount = 0
         let existingCount = 0
