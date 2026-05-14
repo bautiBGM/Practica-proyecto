@@ -11,9 +11,7 @@ usersRoutes.get("/", userController.getAllUsers)
 
 usersRoutes.post("/",validateUser, userController.createUser)
 
-// usersRoutes.put("/:id", (req,res)=>{
-//     res.status(200).send({status: true, message:""})
-// })
+usersRoutes.put("/:id", userController.updateUser) 
 
 usersRoutes.delete("/:id", userController.deleteUser)
 
