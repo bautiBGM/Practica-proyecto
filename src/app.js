@@ -3,6 +3,7 @@ import router from "./routes/router.js"
 import connection from "./db/connection.js"
 import "./models/associations.js"
 import cors from "cors"
+
 const app = express()
 
 

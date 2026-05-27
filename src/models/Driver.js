@@ -33,7 +33,8 @@ Driver.init({
     dateOfBirth: {
         type: DataTypes.STRING,
         allowNull: true
-    },    price: {
+    },    
+    price: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 10

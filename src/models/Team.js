@@ -1,9 +1,9 @@
 import {DataTypes,Model} from "sequelize"
 import connection from "../db/connection.js"
 
-class ChooseTeam extends Model{}
+class Team extends Model{}
 
-ChooseTeam.init({
+Team.init({
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -29,4 +29,4 @@ ChooseTeam.init({
     modelName: "Team"
 })
 
-export default ChooseTeam
+export default Team

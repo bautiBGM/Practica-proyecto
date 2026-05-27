@@ -6,7 +6,7 @@ import DriverService from '../services/DriverService.js'
 const f1Service = new F1Service()
 const driverService = new DriverService()
 
-class F1Controller {
+class DriverF1Controller {
     // trae todos los pilotos de la base de datos
     getDriversFromDB = async (req, res) => {
         try {
@@ -44,4 +44,4 @@ class F1Controller {
         }
     }
 }
-export default F1Controller
+export default DriverF1Controller
