@@ -5,15 +5,31 @@ class UserController {
 
 userService = new UserService()
 
-getAllUsers =async(req,res)=>{
-    try {
-            const user = await this.userService.getAllUsers()
-            res.status(200).send({
+// getAllUsers =async(req,res)=>{
+//     try {
+//             const user = await this.userService.getAllUsers()
+//             res.status(200).send({
+//             success: true,
+//             message: user
+//         })
+
+//     } catch (error) {
+//         res.status(400).send({
+//             success: false,
+//             message: error.message
+//         })
+//     }
+// }
+
+getUserById = async (req,res) => {
+    try{
+        const data = req.body
+        const user = await this.userService.getUserById(data.id)
+        res.status(200).send({
             success: true,
             message: user
         })
-
-    } catch (error) {
+    }catch(error){
         res.status(400).send({
             success: false,
             message: error.message
@@ -58,7 +74,7 @@ try {
 
 deleteUser = async (req,res)=>{
     try {
-        const {id} = req.params
+        const {id} = req.body
         const user = await this.userService.deleteUser({id})
         res.status(200).send({
             success: true,

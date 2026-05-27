@@ -6,8 +6,8 @@ const userController = new UserController()
 const usersRoutes = Router()
 
 
-usersRoutes.get("/", userController.getAllUsers)
-// usersRoutes.get("/:id", getAllUserById)
+// usersRoutes.get("/", userController.getAllUsers)
+usersRoutes.get("/:id", userController.getUserById)
 
 usersRoutes.post("/",validateUser, userController.createUser)
 
