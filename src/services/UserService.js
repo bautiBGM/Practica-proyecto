@@ -2,12 +2,7 @@ import User from "../models/User.js"
 
 class UserService{
 
-// getAllUsers =async()=>{
-//     const users = await User.findAll({
-//         attributes: ["name", "mail"]
-//     })
-//     return users
-// }
+
 getUserById = async (id) => {
     const user = await User.findByPk(id)
     return{name: user.name, mail: user.mail} 
@@ -42,6 +37,13 @@ deleteUser = async(data) =>{
     await  user.destroy()
     return `usuario: ${user.name} eliminado`
 }
+
+// getAllUsers =async()=>{
+//     const users = await User.findAll({
+//         attributes: ["name", "mail"]
+//     })
+//     return users
+// }
 }
 
 export default UserService

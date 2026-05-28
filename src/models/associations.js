@@ -16,6 +16,5 @@ export {
     User,
     Driver,
     Constructor,
-    
-Team
+    Team
 }

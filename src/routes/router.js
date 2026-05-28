@@ -6,8 +6,8 @@ import driversF1Routes from "./driversF1Routes.js"
 const router = Router()
 
 router.use("/users",usersRoutes)
-router.use("/roles",rolesRoutes)
-router.use("/api/f1", driversF1Routes)
+// router.use("/roles",rolesRoutes)
+router.use("/drivers", driversF1Routes)
 
 export default router;
 
