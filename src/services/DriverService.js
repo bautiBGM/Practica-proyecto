@@ -27,7 +27,7 @@ class DriverService {
     //         Piastri: 26,
     //         Hamilton: 25,
     //         Russell: 24,
-
+    
     //         Alonso: 21,
     //         Sainz: 21,
     //         Albon: 19,
