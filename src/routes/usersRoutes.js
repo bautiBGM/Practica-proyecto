@@ -6,10 +6,10 @@ const userController = new UserController()
 const usersRoutes = Router()
 
 
-// usersRoutes.get("/", userController.getAllUsers)
+usersRoutes.get("/", userController.getAllUsers)
 usersRoutes.get("/:id", userController.getUserById)
 
-usersRoutes.post("/",validateUser, userController.createUser)
+usersRoutes.post("/register",validateUser, userController.createUser)
 
 usersRoutes.put("/:id", userController.updateUser) 
 

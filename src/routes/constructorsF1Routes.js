@@ -2,14 +2,17 @@ import {Router} from "express"
 import ConstructorController from "../controllers/ConstructorController.js"
 
 const constructorsF1Controller = new ConstructorController()
-const f1Routes = Router()
-
-f1Routes.get("/constructors", constructorsF1Controller.getConstructors)
-f1Routes.post("/sync-constructors", constructorsF1Controller.syncConstructors)
-f1Routes.get("/consturctors-db", constructorsF1Controller.getConstructorsFromDB)
-f1Routes.get("/constructor/:id", constructorsF1Controller.getConstructorsById )
+const constructorF1Routes = Router()
 
 
+constructorF1Routes.get("/consturctors", constructorsF1Controller.getConstructorsFromDB)
+constructorF1Routes.get("/constructor/:id", constructorsF1Controller.getConstructorsById )
+
+
+
+export default constructorF1Routes
+
+// constructorF1Routes.post("/sync-constructors", constructorsF1Controller.syncConstructors)
 //https://api.jolpi.ca/ergast/f1/2026/driverstandings.json
 //https://api.jolpi.ca/ergast/f1/2026/results.json
 //https://api.jolpi.ca/ergast/f1/2026/constructors.json

@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 await connection.sync({force : false})
+// await connection.sync({ alter: true })
 
 app.use(cors())
 

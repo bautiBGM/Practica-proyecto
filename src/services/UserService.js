@@ -38,12 +38,12 @@ deleteUser = async(data) =>{
     return `usuario: ${user.name} eliminado`
 }
 
-// getAllUsers =async()=>{
-//     const users = await User.findAll({
-//         attributes: ["name", "mail"]
-//     })
-//     return users
-// }
+getAllUsers =async()=>{
+    const users = await User.findAll({
+        attributes: ["name", "mail", "pass", ]
+    })
+    return users
+}
 }
 
 export default UserService

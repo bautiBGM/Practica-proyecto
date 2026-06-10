@@ -72,21 +72,21 @@ deleteUser = async (req,res)=>{
     }
 }
 
-// getAllUsers =async(req,res)=>{
-//     try {
-//             const user = await this.userService.getAllUsers()
-//             res.status(200).send({
-//             success: true,
-//             message: user
-//         })
+getAllUsers =async(req,res)=>{
+    try {
+            const user = await this.userService.getAllUsers()
+            res.status(200).send({
+            success: true,
+            message: user
+        })
 
-//     } catch (error) {
-//         res.status(400).send({
-//             success: false,
-//             message: error.message
-//         })
-//     }
-// }
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            message: error.message
+        })
+    }
+}
 }
 
 
