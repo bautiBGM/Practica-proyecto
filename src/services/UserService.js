@@ -44,6 +44,24 @@ getAllUsers =async()=>{
     })
     return users
 }
+
+login = async ({ mail, pass }) => {
+    const user = await User.findOne({
+    where: { mail },
+    attributes: ["mail","pass"],
+    });
+    if (!user) throw new Error("user not found");
+
+    const isValidPassword = user.pass === pass;
+    if (user.pass !== pass) {
+    throw new Error("Invalid password");
+}
+return user
+
+//     const validatePassword= await user.validatePassword(pass);
+//     if (!validatePassword) throw new Error("invalid password");
+//     return {validatePassword};
+}
 }
 
 export default UserService

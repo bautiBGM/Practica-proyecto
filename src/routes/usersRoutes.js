@@ -9,6 +9,7 @@ const usersRoutes = Router()
 usersRoutes.get("/", userController.getAllUsers)
 usersRoutes.get("/:id", userController.getUserById)
 
+usersRoutes.post("/login", userController.login)
 usersRoutes.post("/register",validateUser, userController.createUser)
 
 usersRoutes.put("/:id", userController.updateUser) 

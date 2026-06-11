@@ -25,18 +25,19 @@ export default constructorService
 //     let existingCount = 0;
 
 //     const constructorsPrices = {
-//         McLaren: 30,
-//         Ferrari: 29,
-//         Mercedes: 28,
-//         "Red Bull": 27,
+//         mclaren: 30,
+//         ferrari: 29,
+//         mercedes: 28,
+//         red_bull: 27,
 
-//         Williams: 20,
-//         Alpine: 19,
-//         RacingBulls: 18,
-//         Haas: 17,
+//         williams: 20,
+//         alpine: 19,
+//         rb: 18,
+//         haas: 17,
 
-//         AstonMartin: 16,
-//         KickSauber: 15
+//         aston_martin: 16,
+//         audi: 15,
+//         cadillac: 10
 //     };
 
 //     for (const constructor of constructorsFromApi) {

@@ -87,6 +87,17 @@ getAllUsers =async(req,res)=>{
         })
     }
 }
+
+login= async (req, res) => {
+    try {
+        const {mail, pass} = req.body;
+        const user = await this.userService.login({mail, pass});
+        res.status(200).send({ success: true, user });
+    } catch (error) {
+        res.status(400).send({ success: false, message: error.message });
+    }
+}
+
 }
 
 
