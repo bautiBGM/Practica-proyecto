@@ -5,6 +5,7 @@ import Team from "./Team.js"
 
 // relaciones
 
+User.hasOne(Team, { foreignKey: "userId" })
 Team.belongsTo(User, { foreignKey: "userId" })
 
 Team.belongsTo(Driver, { as: "pilot1", foreignKey: "pilot1Id" })
