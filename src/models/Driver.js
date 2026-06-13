@@ -14,6 +14,10 @@ Driver.init({
         allowNull: false,
         unique: true
     },
+    permanentNumber:{
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     givenName: {
         type: DataTypes.STRING,
         allowNull: false

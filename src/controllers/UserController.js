@@ -27,7 +27,7 @@ try {
     const user = await this.userService.createUser({name,mail,pass})
     res.status(200).send({
     success: true,
-    message: user
+    user
     })
 
 } catch (error) {
@@ -40,11 +40,12 @@ try {
 
 updateUser = async(req,res)=>{
 try {
-    const {id,name,mail,pass} = req.body
-    const user = await this.userService.updateUser({id,name,mail,pass})
+    const {id} = req.params
+    const {name,mail,pass,profile_pic} = req.body
+    const user = await this.userService.updateUser({id,name,mail,pass,profile_pic})
     res.status(200).send({
     success: true,
-    message: user
+    user
     })
 
 } catch (error) {

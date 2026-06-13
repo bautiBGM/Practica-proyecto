@@ -9,18 +9,18 @@ getUserById = async (id) => {
 }
 
 createUser = async(data) =>{
-    const {id,name} = await User.create(data)
-    return {id,name}
+    const {id,name,mail} = await User.create(data)
+    return {id,name,mail}
 }
 
 updateUser= async (data) => {
     const user = await User.findByPk(data.id)
     if (!user){
-    throw new Error(`usuario ${user.name} no encontrado`)
+    throw new Error(`usuario no encontrado`)
     }
     
     await user.update(data)
-    return `usuario: ${data.id} actualizado`
+    return user
         
 } 
 
@@ -48,7 +48,7 @@ getAllUsers =async()=>{
 login = async ({ mail, pass }) => {
     const user = await User.findOne({
     where: { mail },
-    attributes: ["id","name","mail","pass"],
+    attributes: ["id","name","mail","pass","profile_pic"],
     });
     if (!user) throw new Error("user not found");
 
@@ -59,7 +59,8 @@ login = async ({ mail, pass }) => {
 return {
     id: user.id,
     name: user.name,
-    mail: user.mail
+    mail: user.mail,
+    profile_pic: user.profile_pic
 
 }
 

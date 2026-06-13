@@ -33,17 +33,17 @@ class DriverF1Controller {
             })
         }
     }
-    // trae los pilotos desde la api 
-    // getDriversFromApi = async (req, res) => {
-    //     try {
-    //         const drivers = await f1Service.getDrivers()
-    //         res.json(drivers)
-    //     } catch (error) {
-    //         console.error(error)
-    //         res.status(500).json({ error: 'Error al obtener pilotos' })
-    //     }
-    // }
-    // guarda los pilotos en la base de datos
+    //trae los pilotos desde la api 
+    getDriversFromApi = async (req, res) => {
+        try {
+            const drivers = await f1Service.getDrivers()
+            res.json(drivers)
+        } catch (error) {
+            console.error(error)
+            res.status(500).json({ error: 'Error al obtener pilotos' })
+        }
+    }
+    //guarda los pilotos en la base de datos
     // syncDrivers = async (req, res) => {
     //     try {
     //         const driversFromApi = await f1Service.getDrivers()

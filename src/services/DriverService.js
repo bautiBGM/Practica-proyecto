@@ -53,6 +53,7 @@ class DriverService {
     //             where: { driverId: driver.driverId },
     //             defaults: {
     //                 driverId: driver.driverId,
+    //                 permanentNumber: driver.permanentNumber,
     //                 givenName: driver.givenName,
     //                 familyName: driver.familyName,
     //                 code: driver.code || null,
