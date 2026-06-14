@@ -11,8 +11,9 @@ Team.belongsTo(User, { foreignKey: "userId" })
 Team.belongsTo(Driver, { as: "pilot1", foreignKey: "pilot1Id" })
 Team.belongsTo(Driver, { as: "pilot2", foreignKey: "pilot2Id" })
 
-Team.belongsTo(Constructor, { as: "constructor", foreignKey: "constructorId" })
-
+Team.belongsTo(Constructor, {
+    foreignKey: "constructorId"
+})
 export {
     User,
     Driver,

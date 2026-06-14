@@ -1,9 +1,11 @@
+import TeamService from "../services/TeamService.js"
 import UserService  from "../services/UserService.js"
 
 
 class UserController {
 
 userService = new UserService()
+teamService = new TeamService()
 
 getUserById = async (req,res) => {
     try{
@@ -25,6 +27,7 @@ createUser = async(req,res)=>{
 try {
     const {name,mail,pass} = req.body
     const user = await this.userService.createUser({name,mail,pass})
+    await this.teamService.createTeam(user.id)
     res.status(200).send({
     success: true,
     user
