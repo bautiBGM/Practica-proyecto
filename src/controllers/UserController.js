@@ -62,7 +62,7 @@ try {
 
 deleteUser = async (req,res)=>{
     try {
-        const {id} = req.body
+        const {id} = req.params
         const user = await this.userService.deleteUser({id})
         res.status(200).send({
             success: true,

@@ -1,3 +1,4 @@
+import Team from "../models/Team.js"
 import User from "../models/User.js"
 
 class UserService{
@@ -25,17 +26,26 @@ updateUser= async (data) => {
 } 
 
 deleteUser = async(data) =>{
-    const user = await User.findByPk(data.id)
 
+    const user = await User.findByPk(data.id)
     // const deleted = await User.destroy({where: {id: data.id}})
 
     if(!user){
         throw new Error(`usuario ${data.id} NO ENCONTRADO`)
         
     }
-
+    const team = await Team.findOne({
+        where: {
+            userId: data.id
+        }
+    })
+    if(team){
+        await team.destroy()
+    }
     await  user.destroy()
-    return `usuario: ${user.name} eliminado`
+    
+    
+    return `usuario eliminado`
 }
 
 getAllUsers =async()=>{

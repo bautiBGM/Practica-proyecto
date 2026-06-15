@@ -20,13 +20,12 @@ class TeamService {
 
     getTeamByUser = async (userId) => {
 
-        console.log(Constructor)
         const team = await Team.findOne({
             where: { userId },
             include: [
                 { model: Driver, as: "pilot1" },
                 { model: Driver, as: "pilot2" },
-                { model: Constructor}
+                { model: Constructor, as: "equipo"}
             ]
         })
 

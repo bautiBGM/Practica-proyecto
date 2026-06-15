@@ -25,7 +25,7 @@ class ConstructorController{
     
     getConstructorsFromDB = async (req,res) => {
         try{
-            const constructors = await f1service.getConstructors()
+            const constructors = await constructorService.getAllConstructors()
             res.json(constructors)
         }catch(error){
             console.error(error);
