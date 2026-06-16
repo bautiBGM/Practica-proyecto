@@ -4,10 +4,6 @@ import Constructor from "../models/Constructor.js"
 
 
 
-// console.log("TEAM:", Team)
-// console.log("DRIVER:", Driver)
-// console.log("CONSTRUCTOR:", Constructor)
-
 class TeamService {
 
     createTeam = async (userId) => {
@@ -45,6 +41,64 @@ updateTeam = async (userId, data) => {
 
     if(!team){
         throw new Error("equipo no encontrado")
+    }
+    if(data.pilot1Id){
+
+        const piloto = await Driver.findByPk(data.pilot1Id)
+
+        if(team.budget < piloto.price){
+            throw new Error("presupuesto insuficiente")
+        }
+
+        data.budget = team.budget - piloto.price
+    }
+
+    // Quitar piloto 1
+    if(data.pilot1Id === null && team.pilot1Id){
+
+        const piloto = await Driver.findByPk(team.pilot1Id)
+
+        data.budget = team.budget + piloto.price
+    }
+
+    if(data.pilot2Id){
+
+    const piloto = await Driver.findByPk(data.pilot2Id)
+
+    if(team.budget < piloto.price){
+
+        throw new Error("presupuesto insuficiente")
+    }
+
+    data.budget = team.budget - piloto.price
+    }
+
+    // Quitar piloto 2
+    if(data.pilot2Id === null && team.pilot2Id){
+
+        const piloto = await Driver.findByPk(team.pilot2Id)
+
+        data.budget = team.budget + piloto.price
+    }
+
+    if(data.constructorId){
+
+    const constructor = await Constructor.findByPk(data.constructorId)
+
+    if(team.budget < constructor.price){
+
+        throw new Error("presupuesto insuficiente")
+    }
+
+    data.budget = team.budget - constructor.price
+    }
+
+    // Quitar constructor 
+    if(data.constructorId === null && team.constructorId){
+
+        const constructor = await Constructor.findByPk(team.constructorId)
+
+        data.budget = team.budget + constructor.price
     }
 
     await team.update(data)
