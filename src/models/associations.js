@@ -2,6 +2,7 @@ import User from "./User.js"
 import Driver from "./Driver.js"
 import Constructor from "./Constructor.js"
 import Team from "./Team.js"
+// import Tournament from "./Tournament.js";
 
 // relaciones
 
@@ -15,9 +16,19 @@ Team.belongsTo(Constructor, {
     as: "equipo",
     foreignKey: "constructorId"
 })
+
+// User.hasMany(Tournament, {
+//     foreignKey: "userId",
+//     onDelete: "CASCADE"
+// });
+
+// Tournament.belongsTo(User, {
+//     foreignKey: "userId"
+// });
 export {
     User,
     Driver,
     Constructor,
-    Team
+    Team,
+    // Tournament
 }
